@@ -20,4 +20,7 @@ class Director < ApplicationRecord
 
   #   return the_many
   # end
+
+  # in rails c
+  # Director.join.filmography ... => SQL inner join
 end

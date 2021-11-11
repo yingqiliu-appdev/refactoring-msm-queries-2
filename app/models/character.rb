@@ -11,7 +11,13 @@
 #
 class Character < ApplicationRecord
 
-  belongs_to(:movie, { :class_name => "Movie", :foreign_key => "movie_id"})
+  belongs_to(:movie, 
+   # class same as function name { :class_name => "Movie", 
+   # foreign key same as function name  :foreign_key => "movie_id"
+   # }
+  )
+  belongs_to(:actor, { :class_name => "Actor", :foreign_key => "actor_id"})
+
   # def movie
   #   key = self.movie_id
 

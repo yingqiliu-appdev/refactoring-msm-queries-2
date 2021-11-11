@@ -32,4 +32,17 @@ class Movie < ApplicationRecord
 # Used to define many to many relation, i.e., array
   has_many(:characters, { :class_name => "Character", :foreign_key => "movie_id"})
 
+  #multiple inner joins from actor to director
+  has_many(:cast, { :through => :characters, :source => :actor})
+
+  # def cast
+  #   the_many = Array.new
+
+  #   self.characters.each do |joining_record|
+  #     destination_record = joining_record.actor
+  #     the_many.push(destination_record)
+  #   end
+  #   return the_many
+  # end
+
 end
